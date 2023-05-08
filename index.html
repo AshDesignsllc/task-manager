@@ -19,6 +19,7 @@
 
 <body>
     <main>
+        <form>
         <div class="container mx-auto">
             <h1 class="text-center mt-5">Task List</h1>
             <div class="input-group mb-3 mt-5">
@@ -27,7 +28,7 @@
             </div>
             <div class="input-group mt-5">
                 <span class="input-group-text">Task Description</span>
-                <textarea class="form-control" aria-label="Task Description"></textarea>
+                <textarea class="form-control" id="formcontroltextarea" aria-label="Task Description"></textarea>
             </div>
         </div>
         <div class="row mt-5 justify-content-center">
@@ -71,7 +72,7 @@
             </div>
         </div>
         <div class="row d-grid gap-2 col-6 mx-auto mt-5">
-            <button type="button" class="btn btn-primary btn-lg shadow-lg p-3 mb-5">Add Task</button>
+            <button type="submit" class="btn btn-primary btn-lg shadow-lg p-3 mb-5">Add Task</button>
         </div>
     
         <!-- Task Card -->
@@ -131,6 +132,7 @@
                 </div>
             </div>
         </div>
+        </form>
     </main>
     <!-- JavaScript Code -->
 
