@@ -1,156 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Task Manager</title>
-    <link rel="stylesheet" href="task-manager/assets/css/styles.css">
-    
+    <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
-<body>
-    <main>
-        <form>
-        <div class="container mx-auto">
-            <h1 class="text-center mt-5">Task List</h1>
-            <div class="input-group mb-3 mt-5">
-                <span class="input-group-text">Add New Task</span>
-                <input type="text" class="form-control" aria-label="Username">
-            </div>
-            <div class="input-group mt-5">
-                <span class="input-group-text">Task Description</span>
-                <textarea class="form-control" id="formcontroltextarea" aria-label="Task Description"></textarea>
-            </div>
-        </div>
-        <div class="row mt-5 justify-content-center">
-            <div class="col-auto">
-                <select class="form-select form-select-lg my-3" aria-label="Default select example">
-                    <option selected>Assign To:</option>
-                    <option value="1">Ashley</option>
-                    <option value="2">Cheyanne</option>
-                    <option value="3">Elias</option>
-                    <option value="4">Jordan</option>
-                    <option value="5">Seema</option>
-                </select>
-            </div>
-            <div class="col-auto">
-                <select class="form-select form-select-lg my-3" aria-label="Default select example">
-                    <option selected>Task Type</option>
-                    <option value="1">Design user interfaces & nav menus</option>
-                    <option value="2">Write and review code</option>
-                    <option value="3">Integrate multimedia content</option>
-                    <option value="4">Test web applications</option>
-                    <option value="5">Debug for problems with performance </option>
-                </select>
-            </div>
-            <div class="col-auto">
-                <select class="form-select form-select-lg my-3" aria-label="Default select example">
-                    <option selected>Status</option>
-                    <option value="1">Not started</option>
-                    <option value="2">In Progress</option>
-                    <option value="3">Done</option>
-                </select>
-            </div>
-            <div class="col-auto">
-                <div class="row text-center my-3">
-                    <div class="input-group">
-                        <div class="input-group-text">Due Date</div>
-                        <input type="date" class="form-control" id="autoSizingInputGroup"
-                            style="width: 150px; height: 50px;" id="start" name="trip-start" value="2023-07-21"
-                            min="2023-05-09" max="2023-12-31">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row d-grid gap-2 col-6 mx-auto mt-5">
-            <button type="submit" class="btn btn-primary btn-lg shadow-lg p-3 mb-5">Add Task</button>
-        </div>
-    
-        <!-- Task Card -->
-        <div class="container-fluid">
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col">
-                    <div class="card border-success mb-3 h-100">
-                        <div class="card-header">Task created successfully</div>
-                        <div class="card-body text-success">
-                            <h5 class="card-title">HTML</h5>
-                            <ul class="list-group">
-                            <li class="list-group-item border-0"><strong>Description:</strong> Edit final code for group review.</p>
-                            <li class="list-group-item border-0"><strong>Assigned To:</strong> Elias</p>
-                            <li class="list-group-item border-0"><strong>Task Type:</strong> Write & Review Code</p>
-                            <li class="list-group-item border-0"><strong>Due Date:</strong> 07/21/2023</p>
-                            <li class="list-group-item border-0"><strong>Status:</strong> In progress</p>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card border-success mb-3 h-100">
-                        <div class="card-header">Task created successfully</div>
-                        <div class="card-body text-success">
-                            <h5 class="card-title">Task Name</h5>
-                            <ul class="list-group">
-                            <li class="list-group-item border-0">Description:</p>
-                            <li class="list-group-item border-0">Assigned To:</p>
-                            <li class="list-group-item border-0">Task Type:</p>
-                            <li class="list-group-item border-0">Due Date:</p>
-                            <li class="list-group-item border-0">Status:</p>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card border-success mb-3 h-100">
-                        <div class="card-header">Task created successfully</div>
-                        <div class="card-body text-success">
-                            <h5 class="card-title">Task Name</h5>
-                            <ul class="list-group">
-                            <li class="list-group-item border-0">Description:</p>
-                            <li class="list-group-item border-0">Assigned To:</p>
-                            <li class="list-group-item border-0">Task Type:</p>
-                            <li class="list-group-item border-0">Due Date:</p>
-                            <li class="list-group-item border-0">Status:</p>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card border-success mb-3 h-100">
-                        <div class="card-header">Task created successfully</div>
-                        <div class="card-body text-success">
-                            <h5 class="card-title">Task Name</h5>
-                            <ul class="list-group">
-                            <li class="list-group-item border-0">Description:</p>
-                            <li class="list-group-item border-0">Assigned To:</p>
-                            <li class="list-group-item border-0">Task Type:</p>
-                            <li class="list-group-item border-0">Due Date:</p>
-                            <li class="list-group-item border-0">Status:</p>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card border-success mb-3 h-100">
-                        <div class="card-header">Task created successfully</div>
-                        <div class="card-body text-success">
-                            <h5 class="card-title">Task Name</h5>
-                            <ul class="list-group">
-                            <li class="list-group-item border-0">Description:</p>
-                            <li class="list-group-item border-0">Assigned To:</p>
-                            <li class="list-group-item border-0">Task Type:</p>
-                            <li class="list-group-item border-0">Due Date:</p>
-                            <li class="list-group-item border-0">Status:</p>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </form>
-    </main>
-    <!-- JavaScript Code -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</body>
+<body>
+    <!-- Main Section -->
+    <main>
+        <!-- Form -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+        </head>
+
+        <body>
+            <main>
+                <!-- NEEDS VALIDATION IS BOOTSTRAP THAT ONLY GOES UNDER THE FORM -->
+                <form class="needs-validation" novalidate>
+                    <div class="container mx-auto">
+                        <h1 class="text-center mt-5">Task List</h1>
+                        <div class="input-group mb-3 mt-5">
+                            <span class="input-group-text" id="#newTaskNameInput">Add New Task</span>
+                            <input type="text" class="form-control" aria-label="Username" required>
+                            <!-- WE NEED TO ADD THIS TO EVERY INPUT-->
+                            <div class="invalid-feedback">
+                                Please choose a username.
+                            </div>
+                        </div>
+                        <div class="input-group mt-5">
+                            <span class="input-group-text" id="#newDescriptionInput">Task Description</span>
+                            <textarea class="form-control" id="formcontroltextarea"
+                                aria-label="Task Description"></textarea>
+                        </div>
+                    </div>
+                    <div class="row mt-5 justify-content-center">
+                        <div class="col-auto">
+                            <select class="form-select form-select-lg my-3" aria-label="Default select example">
+                                <option selected>Assign To:</option>
+                                <option value="1" class="assigned">Ashley</option>
+                                <option value="2" class="assigned">Cheyanne</option>
+                                <option value="3" class="assigned">Elias</option>
+                                <option value="4" class="assigned">Jordan</option>
+                                <option value="5" class="assigned">Seema</option>
+                            </select>
+                        </div>
+                        <div class="col-auto">
+                            <select class="form-select form-select-lg my-3" aria-label="Default select example">
+                                <option selected>Task Type</option>
+                                <option value="1" class="taskType">Design user interfaces & nav menus</option>
+                                <option value="2" class="taskType">Write and review code</option>
+                                <option value="3" class="taskType">Integrate multimedia content</option>
+                                <option value="4" class="taskType">Test web applications</option>
+                                <option value="5" class="taskType">Debug for problems with performance </option>
+                            </select>
+                        </div>
+                        <div class="col-auto">
+                            <select class="form-select form-select-lg my-3" aria-label="Default select example">
+                                <option selected>Status</option>
+                                <option value="1" class="statusUpdate">Not started</option>
+                                <option value="2" class="statusUpdate">In Progress</option>
+                                <option value="3" class="statusUpdate">Done</option>
+                            </select>
+                        </div>
+                        <div class="col-auto">
+                            <div class="row text-center my-3">
+                                <div class="input-group">
+                                    <div class="input-group-text">Due Date</div>
+                                    <input type="date" class="dueDate form-control" id="autoSizingInputGroup"
+                                        style="width: 150px; height: 50px;" id="start" name="trip-start"
+                                        value="2023-07-21" min="2023-05-09" max="2023-12-31">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-grid gap-2 col-6 mx-auto mt-5">
+                        <button type="submit" class="btn btn-primary btn-lg shadow-lg p-3 mb-5">Add Task</button>
+                    </div>
+
+                    <!-- Task Card -->
+                    <div class="container-fluid">
+                        <div class="row row-cols-1 row-cols-md-3 g-4">
+                            <div class="col">
+                                <div class="card border-success mb-3 h-100">
+                                    <div class="card-header">Task created successfully</div>
+                                    <div class="card-body text-success">
+                                        <h5 class="card-title">Task Name</h5>
+                                        <p class="card-text">Description</p>
+                                        <p class="card-text">Assigned To</p>
+                                        <p class="card-text">Task Type</p>
+                                        <p class="card-text">Due Date</p>
+                                        <p class="card-text">Status</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card border-success mb-3 h-100">
+                                    <div class="card-header">Task created successfully</div>
+                                    <div class="card-body text-success">
+                                        <h5 class="card-title">Task Name</h5>
+                                        <p class="card-text">Description</p>
+                                        <p class="card-text">Assigned To</p>
+                                        <p class="card-text">Task Type</p>
+                                        <p class="card-text">Due Date</p>
+                                        <p class="card-text">Status</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card border-success mb-3 h-100">
+                                    <div class="card-header">Task created successfully</div>
+                                    <div class="card-body text-success">
+                                        <h5 class="card-title">Task Name</h5>
+                                        <p class="card-text">Description</p>
+                                        <p class="card-text">Assigned To</p>
+                                        <p class="card-text">Task Type</p>
+                                        <p class="card-text">Due Date</p>
+                                        <p class="card-text">Status</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card border-success mb-3 h-100">
+                                    <div class="card-header">Task created successfully</div>
+                                    <div class="card-body text-success">
+                                        <h5 class="card-title">Task Name</h5>
+                                        <p class="card-text">Description</p>
+                                        <p class="card-text">Assigned To</p>
+                                        <p class="card-text">Task Type</p>
+                                        <p class="card-text">Due Date</p>
+                                        <p class="card-text">Status</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </main>
+            <!-- JavaScript Code -->
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+                crossorigin="anonymous"></script>
+            <script src="./assets/js/index.js"></script>
+            <script>
+                // Example starter JavaScript for disabling form submissions if there are invalid fields
+                (function () {
+                    'use strict'
+
+                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                    var forms = document.querySelectorAll('.needs-validation')
+
+                    // Loop over them and prevent submission
+                    Array.prototype.slice.call(forms)
+                        .forEach(function (form) {
+                            form.addEventListener('submit', function (event) {
+                                if (!form.checkValidity()) {
+                                    event.preventDefault()
+                                    event.stopPropagation()
+                                }
+
+                                form.classList.add('was-validated')
+                            }, false)
+                        })
+                })()
+            </script>
+        </body>
+
 </html>
