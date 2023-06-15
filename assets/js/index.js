@@ -1,33 +1,109 @@
-function validFormFieldInput(data) {
-//selecting name input
-const newTaskNameInput = document.querySelector('#newTaskNameInput');
-const name = newTaskNameInput.value;
-console.log("name: "+name);
-//selecting description input
-const newDescriptionInput = document.querySelector('#newDescriptionInput');
-const description = newDescriptionInput.value;
-console.log("description: "+description);
-//selecting assign teammate input
-const newAssignInput = document.getElementsByClassName('assign');
-const assign = newAssignInput.value;
-console.log("assign: "+assign);
-//selecting assign tasktype
-const newTaskType = document.getElementsByClassName('taskType');
-const task = newTaskType.value;
-console.log("task: "+task);
-//selecting status update
-const newStatusUpdate = document.getElementsByClassName('statusUpdate');
-const statusUpdate = newStatusUpdate.value;
-console.log("statusUpdate: "+statusUpdate);
-}
+const taskManager = new TaskManager(); //This should only be initialized once thus
+//why this is at the top and not connected to any other functions
+const taskCards = document.querySelector("#taskCards");
+const newTaskNameInput = document.querySelector("#newTaskNameInput");
+const newDescriptionInput = document.querySelector(".newDescriptionInput");
+const newAssignInput = document.querySelector("#assignedTo");
+const newTaskType = document.querySelector("#taskType");
+const newStatusUpdate = document.querySelector("#statusUpdate");
+const dueDate = document.querySelector(".dueDate");
 
-//console.log(validFormFieldInput);
+// Fetch all the forms we want to apply custom Bootstrap validation styles to
+const forms = document.querySelectorAll(".needs-validation");
 
-//document.getElementById('').style.display = 'hidden';
+//create task manager first then use the addTask method once the user has added data
 
-// //function () {
-//     if () {
+// const _tasksManager = new TaskManager.addTask(tasks);
 
+//getElementsByClass returns a nodes list, you cannot access a single value of a node list,
+// instead you must query select it with class or ID, as getElementsByClass will pull multiple values
+
+// Loop over them and prevent submission
+Array.prototype.slice.call(forms).forEach(function (form) {
+  form.addEventListener(
+    "submit",
+    function (event) {
+      event.preventDefault();
+      if (form.checkValidity()) {
+        // event.stopPropagation();
+        console.log("Validated and called");
+        const name = newTaskNameInput.value;
+        const description = newDescriptionInput.value;
+        const assigned = newAssignInput.value;
+        const task = newTaskType.value;
+        const statusUpdate = newStatusUpdate.value;
+        const dueDateInput = dueDate.value;
+        // if valid add task here // tasks.addTask(parameters)
+        taskManager.addTask(
+          name,
+          description,
+          assigned,
+          task,
+          dueDateInput,
+          statusUpdate
+        );
+        taskManager.render(taskCards);
+        form.classList.add("was-validated");
+        console.log(taskManager.tasks);
+        //Resetting the form on the line below
+        form.reset();
+        console.log("Form has been reset");
+      } else {
+        event.stopPropagation();
+        console.log("Was not validated!");
+      }
+      form.classList.add("was-validated");
+    },
+    false
+  );
+});
+
+// const taskHtml = createTaskHtml(
+//   "Code",
+//   "pass code",
+//   "J",
+//   "write code",
+//   "07-11-23",
+//   "TODO"
+// );
+// console.log(taskHtml);
+
+// function validFormFieldInput(data) {
+//   //selecting name input
+//   console.log("name: " + name);
+//   //selecting description input
+//   console.log("description: " + description);
+//   //selecting assign teammate input
+//   console.log("assign: " + assign);
+//   //selecting assign tasktype
+//   console.log("task: " + task);
+//   //selecting status update
+//   console.log("statusUpdate: " + statusUpdate);
+// }
+// };
+
+// window.onload = function (e) {
+// var forms = document.querySelectorAll(".needs-validation");
+// Array.prototype.slice.call(forms).forEach(function (form) {
+//   form.addEventListener("submit", function (event) {
+//     if (!form.checkValidity()) {
+//       event.preventDefault();
+//       event.stopPropagation();
+//     } else {
+//       // if valid add task here // tasks.addTask(parameters)
+//       this.tasks.push(
+//         new TaskManager(
+//           taskNameValue,
+//           descriptionInputValue,
+//           assignedToValue,
+//           taskTypeValue,
+//           statusValue,
+//           dueDateValue
+//         )
+//       );
+//       form.classList.add("was-validated");
 //     }
-//   }
-
+//     false;
+//   });
+//   console.log(forms, _tasksManager);
+// }
