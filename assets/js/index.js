@@ -58,6 +58,15 @@ Array.prototype.slice.call(forms).forEach(function (form) {
   );
 });
 
+const tasksListVariable = document.querySelector("#taskCards");
+taskCards.addEventListener("click", (event) => {
+  if (event.target.classList.contains("done-button")) {
+    console.log("you did it");
+  }
+  const parentTask = tasksListVariable.parentElement;
+  console.log(parentTask);
+});
+
 // const taskHtml = createTaskHtml(
 //   "Code",
 //   "pass code",

@@ -1,18 +1,22 @@
-const createTaskHtml = (name, description, assign, dueDate, status) => {
+const createTaskHtml = (name, description, assign, dueDate, status, id) => {
   const html = ` 
   <div class="col">
       <div class="card border-success mb-3 h-100">
           <div class="card-header">Task created successfully</div>
           <div class="card-body text-success">
-              <h5 class="card-title">${name}</h5>
-              <p class="card-text">${description}</p>
-              <p class="card-text">${assign}</p>
-              <p class="card-text">${dueDate}</p>
-              <p class="card-text">${status}</p>
+          <button class="done-button">Mark as done</button>
+          <ul>
+              <li class="card-title">${name}</>
+              <li class="card-text">${description}</li>
+              <li class="card-text">${assign}</li>
+              <li class="card-text">${dueDate}</li>
+              <li class="card-text">${status}</li>
+              <li id="data-task-id"> ${id}</li>
+              </ul>
           </div>
       </div>
   </div>
-`;
+  `;
   return html;
 };
 
@@ -47,11 +51,33 @@ class TaskManager {
         task.description,
         task.assign,
         task.dueDate,
-        task.status
+        task.status,
+        task.id
       );
       taskHtmlList += taskHtml;
     });
     element.innerHTML = taskHtmlList;
+  }
+  getTaskById(taskId) {
+    let foundTask = "";
+    // for (let i = 0; i < this.tasks.length; i++) {
+    //   if (this.tasks === taskId) {
+    //     foundTask = task;
+    //     console.log(foundTask);
+    //   }
+    // }
+
+    this.tasks.forEach((task) => {
+      if (taskId === task.id) {
+        // console.log("ARGGG");
+        task === foundTask;
+        return foundTask;
+      }
+      // else {
+      //   console.log("hello");
+      // }
+    });
+    taskManager.getTaskById(0);
   }
 }
 

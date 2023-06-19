@@ -32,7 +32,7 @@
                             <input type="text" class="form-control" aria-label="Username" id="newTaskNameInput" required>
                             <!-- WE NEED TO ADD THIS TO EVERY INPUT-->
                             <div class="invalid-feedback">
-                                Please choose a username.
+
                             </div>
                         </div>
                         <div class="input-group mt-5">
@@ -86,12 +86,13 @@
                         </div>
                     </div>
                     <div class="row d-grid gap-2 col-6 mx-auto mt-5">
-                        <button type="submit" class="submitBtn btn-primary btn-lg shadow-lg p-3 mb-5">Add Task</button>
+                        <button type="submit" id="addTaskBtn" class="submitBtn btn-primary btn-lg shadow-lg p-3 mb-5">Add Task</button>
                     </div>
 
                     <!-- Task Card -->
                     <div class="container-fluid">
                         <div id='taskCards' class="row row-cols-1 row-cols-md-3 g-4">
+                           
                             <!-- <div class="col">
                                 <div class="card border-success mb-3 h-100">
                                     <div class="card-header">Task created successfully</div>

@@ -8,3 +8,9 @@ h1 {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: larger;
 }
+
+ul li {
+  list-style: none;
+  font-size: large;
+  padding: 0 2rem;
+}
