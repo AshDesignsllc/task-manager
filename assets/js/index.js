@@ -58,7 +58,7 @@ const tasksListVariable = document.querySelector("#taskCards");
 const markAsDoneBtn = document.querySelector(".done-button");
 taskCards.addEventListener("click", (event) => {
   if (event.target.classList.contains("done-button")) {
-    event.target.classList.remove("done-button");
+    console.log('Mark as done button clicked');
   }
   let parent = event.target.parentElement.parentElement;
   const taskId = Number(parent.dataset.task);
