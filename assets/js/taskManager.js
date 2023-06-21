@@ -1,17 +1,19 @@
+//Make sure to add data attribute to delete button the same way it was done on the 'mark as done' on line 8
 const createTaskHtml = (name, description, assign, dueDate, status, id) => {
   const html = ` 
   <div class="col">
-      <div class="card border-success mb-3 h-100">
+      <div class="card border-success mb-3 h-100" data-task= ${id}>
           <div class="card-header">Task created successfully</div>
           <div class="card-body text-success">
           <button class="done-button">Mark as done</button>
           <ul>
-              <li class="card-title">${name}</>
+              <li class="card-title">${name}</li>
               <li class="card-text">${description}</li>
               <li class="card-text">${assign}</li>
               <li class="card-text">${dueDate}</li>
               <li class="card-text">${status}</li>
               <li id="data-task-id"> ${id}</li>
+
               </ul>
           </div>
       </div>
@@ -59,25 +61,25 @@ class TaskManager {
     element.innerHTML = taskHtmlList;
   }
   getTaskById(taskId) {
-    let foundTask = "";
-    // for (let i = 0; i < this.tasks.length; i++) {
-    //   if (this.tasks === taskId) {
-    //     foundTask = task;
-    //     console.log(foundTask);
-    //   }
-    // }
-
-    this.tasks.forEach((task) => {
-      if (taskId === task.id) {
-        // console.log("ARGGG");
-        task === foundTask;
-        return foundTask;
+    let foundTask;
+    for (let i = 0; i < this.tasks.length; i++) {
+      let task = this.tasks[i];
+      if (task.id === taskId) {
+        foundTask = task;
       }
-      // else {
-      //   console.log("hello");
-      // }
-    });
-    taskManager.getTaskById(0);
+      return foundTask;
+    }
+
+    //Try to make forEach work if you want
+    // this.tasks.forEach((task) => {
+    //   if (taskId == task.id) {
+    //     foundTask = task;
+    //     return foundTask;
+    //   }
+    //   // else {
+    //   //   console.log("hello");
+    //   // }
+    // });
   }
 }
 

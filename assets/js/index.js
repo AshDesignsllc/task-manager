@@ -1,4 +1,5 @@
-const taskManager = new TaskManager(); //This should only be initialized once thus
+const taskManager = new TaskManager();
+//This should only be initialized once thus
 //why this is at the top and not connected to any other functions
 const taskCards = document.querySelector("#taskCards");
 const newTaskNameInput = document.querySelector("#newTaskNameInput");
@@ -23,6 +24,7 @@ Array.prototype.slice.call(forms).forEach(function (form) {
   form.addEventListener(
     "submit",
     function (event) {
+      // taskManager.getTaskById(1); TEST FOR ID LOOP
       event.preventDefault();
       if (form.checkValidity()) {
         // event.stopPropagation();
@@ -61,10 +63,14 @@ Array.prototype.slice.call(forms).forEach(function (form) {
 const tasksListVariable = document.querySelector("#taskCards");
 taskCards.addEventListener("click", (event) => {
   if (event.target.classList.contains("done-button")) {
-    console.log("you did it");
+    console.log("Done button clicked");
   }
-  const parentTask = tasksListVariable.parentElement;
-  console.log(parentTask);
+  let parent = event.target.parentElement.parentElement;
+  const taskId = Number(parent.dataset.task);
+  console.log(taskId);
+  let task = taskManager.getTaskById(taskId);
+  task = 'Done';
+  console.log(task);
 });
 
 // const taskHtml = createTaskHtml(
