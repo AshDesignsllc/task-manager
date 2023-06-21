@@ -73,6 +73,8 @@ taskCards.addEventListener("click", (event) => {
   console.log(task);
 });
 
+
+
 // const taskHtml = createTaskHtml(
 //   "Code",
 //   "pass code",
