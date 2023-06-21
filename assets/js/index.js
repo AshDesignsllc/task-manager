@@ -55,9 +55,10 @@ Array.prototype.slice.call(forms).forEach(function (form) {
   );
 });
 const tasksListVariable = document.querySelector("#taskCards");
+const markAsDoneBtn = document.querySelector(".done-button");
 taskCards.addEventListener("click", (event) => {
   if (event.target.classList.contains("done-button")) {
-    console.log("Done button clicked");
+    event.target.classList.remove("done-button");
   }
   let parent = event.target.parentElement.parentElement;
   const taskId = Number(parent.dataset.task);
