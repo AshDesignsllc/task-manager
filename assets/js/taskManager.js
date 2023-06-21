@@ -70,23 +70,7 @@ class TaskManager {
       return foundTask;
     }
 
-    //Try to make forEach work if you want
-    // this.tasks.forEach((task) => {
-    //   if (taskId == task.id) {
-    //     foundTask = task;
-    //     return foundTask;
-    //   }
-    //   // else {
-    //   //   console.log("hello");
-    //   // }
-    // });
+    
   }
 }
 
-// for (let index = 0; index < array.length; index++) {
-//   const element = array[index];
-// }
-// array.forEach((val, index) => {
-//   const element = val;
-// })
-//All functions should have verbal name
