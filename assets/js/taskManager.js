@@ -5,7 +5,7 @@ const createTaskHtml = (name, description, assign, dueDate, status, id) => {
       <div class="card border-success mb-3 h-100" data-task= ${id}>
           <div class="card-header">Task created successfully</div>
           <div class="card-body text-success">
-          <button class="done-button">Mark as done</button>
+          <button class="done-button btn-success">Mark as done</button>
           <ul>
               <li class="card-title">${name}</li>
               <li class="card-text">${description}</li>
