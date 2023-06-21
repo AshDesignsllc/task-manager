@@ -8,17 +8,12 @@ const newAssignInput = document.querySelector("#assignedTo");
 const newTaskType = document.querySelector("#taskType");
 const newStatusUpdate = document.querySelector("#statusUpdate");
 const dueDate = document.querySelector(".dueDate");
-
 // Fetch all the forms we want to apply custom Bootstrap validation styles to
 const forms = document.querySelectorAll(".needs-validation");
-
 //create task manager first then use the addTask method once the user has added data
-
 // const _tasksManager = new TaskManager.addTask(tasks);
-
 //getElementsByClass returns a nodes list, you cannot access a single value of a node list,
 // instead you must query select it with class or ID, as getElementsByClass will pull multiple values
-
 // Loop over them and prevent submission
 Array.prototype.slice.call(forms).forEach(function (form) {
   form.addEventListener(
@@ -59,7 +54,6 @@ Array.prototype.slice.call(forms).forEach(function (form) {
     false
   );
 });
-
 const tasksListVariable = document.querySelector("#taskCards");
 taskCards.addEventListener("click", (event) => {
   if (event.target.classList.contains("done-button")) {
@@ -73,8 +67,6 @@ taskCards.addEventListener("click", (event) => {
   console.log(task);
 });
 
-
-
 // const taskHtml = createTaskHtml(
 //   "Code",
 //   "pass code",
@@ -84,7 +76,6 @@ taskCards.addEventListener("click", (event) => {
 //   "TODO"
 // );
 // console.log(taskHtml);
-
 // function validFormFieldInput(data) {
 //   //selecting name input
 //   console.log("name: " + name);
@@ -98,7 +89,6 @@ taskCards.addEventListener("click", (event) => {
 //   console.log("statusUpdate: " + statusUpdate);
 // }
 // };
-
 // window.onload = function (e) {
 // var forms = document.querySelectorAll(".needs-validation");
 // Array.prototype.slice.call(forms).forEach(function (form) {

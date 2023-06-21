@@ -5,7 +5,7 @@ const createTaskHtml = (name, description, assign, dueDate, status, id) => {
       <div class="card border-success mb-3 h-100" data-task= ${id}>
           <div class="card-header">Task created successfully</div>
           <div class="card-body text-success">
-          <button class="done-button btn-success">Mark as done</button>
+          <button class="done-button">Mark as done</button>
           <ul>
               <li class="card-title">${name}</li>
               <li class="card-text">${description}</li>
@@ -13,7 +13,6 @@ const createTaskHtml = (name, description, assign, dueDate, status, id) => {
               <li class="card-text">${dueDate}</li>
               <li class="card-text">${status}</li>
               <li id="data-task-id"> ${id}</li>
-
               </ul>
           </div>
       </div>
@@ -21,7 +20,6 @@ const createTaskHtml = (name, description, assign, dueDate, status, id) => {
   `;
   return html;
 };
-
 class TaskManager {
   constructor(currentId = 0) {
     // in the real world you'd want to use something like uuid libary - v4()
@@ -85,11 +83,8 @@ class TaskManager {
 
 // for (let index = 0; index < array.length; index++) {
 //   const element = array[index];
-
 // }
-
 // array.forEach((val, index) => {
 //   const element = val;
 // })
-
 //All functions should have verbal name
