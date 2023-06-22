@@ -59,13 +59,15 @@ const markAsDoneBtn = document.querySelector(".done-button");
 taskCards.addEventListener("click", (event) => {
   if (event.target.classList.contains("done-button")) {
     console.log('Mark as done button clicked');
+    let parent = event.target.parentElement.parentElement;
+    const taskId = Number(parent.dataset.task);
+    console.log(taskId);
+    let task = taskManager.getTaskById(taskId);
+    task.status = 'Done';
+    taskManager.render(taskCards);
+    console.log(task);
   }
-  let parent = event.target.parentElement.parentElement;
-  const taskId = Number(parent.dataset.task);
-  console.log(taskId);
-  let task = taskManager.getTaskById(taskId);
-  task = 'Done';
-  console.log(task);
+
 });
 
 // const taskHtml = createTaskHtml(

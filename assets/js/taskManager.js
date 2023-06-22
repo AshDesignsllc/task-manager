@@ -1,4 +1,4 @@
-//Make sure to add data attribute to delete button the same way it was done on the 'mark as done' on line 8
+//Make sure to add data attribute to delete button the same way it was done on the 'mark as done' on line 5
 const createTaskHtml = (name, description, assign, taskType, dueDate, status, id) => {
   const html = ` 
   <div class="col">
@@ -12,7 +12,7 @@ const createTaskHtml = (name, description, assign, taskType, dueDate, status, id
               <li class="card-text">${taskType}</li>
               <li class="card-text">${dueDate}</li>
               <li class="card-text">${status}</li>
-              <li id="data-task-id"> ${id}</li>
+              
               </ul>
           <button class="done-button btn-outline-danger">MARK AS DONE</button>
           </div>
@@ -67,9 +67,8 @@ class TaskManager {
       if (task.id === taskId) {
         foundTask = task;
       }
-      return foundTask;
-    }
-
+      
+    } return foundTask;
     
   }
 }
