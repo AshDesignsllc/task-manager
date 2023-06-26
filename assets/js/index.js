@@ -40,6 +40,7 @@ Array.prototype.slice.call(forms).forEach(function (form) {
           statusUpdate
         );
         taskManager.render(taskCards);
+        taskManager.save();
         form.classList.add("was-validated");
         console.log(taskManager.tasks);
         //Resetting the form on the line below
@@ -65,8 +66,13 @@ taskCards.addEventListener("click", (event) => {
     let task = taskManager.getTaskById(taskId);
     task.status = 'Done';
     taskManager.render(taskCards);
+    taskManager.save();
     console.log(task);
   }
+//In js/index.js, after both adding a new task and updating a task's status to done, call taskManager.save() to save the tasks to localSorage.
+// taskManager.save();
+
+
 
 });
 
