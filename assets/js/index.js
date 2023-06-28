@@ -1,6 +1,9 @@
 const taskManager = new TaskManager();
 //This should only be initialized once thus
 //why this is at the top and not connected to any other functions
+//taskManager.load();
+//taskManager.render(taskCards);
+//Answer to Step 8.8 to render and locally save Cards on page. When it is commented in, cards disappear.
 const taskCards = document.querySelector("#taskCards");
 const newTaskNameInput = document.querySelector("#newTaskNameInput");
 const newDescriptionInput = document.querySelector(".newDescriptionInput");
@@ -39,8 +42,9 @@ Array.prototype.slice.call(forms).forEach(function (form) {
           dueDateInput,
           statusUpdate
         );
-        taskManager.render(taskCards);
         taskManager.save();
+        taskManager.render(taskCards);
+        // taskManager.save();
         form.classList.add("was-validated");
         console.log(taskManager.tasks);
         //Resetting the form on the line below
@@ -65,14 +69,13 @@ taskCards.addEventListener("click", (event) => {
     console.log(taskId);
     let task = taskManager.getTaskById(taskId);
     task.status = 'Done';
-    taskManager.render(taskCards);
     taskManager.save();
+    taskManager.render(taskCards);
+    // taskManager.save();
     console.log(task);
   }
 //In js/index.js, after both adding a new task and updating a task's status to done, call taskManager.save() to save the tasks to localSorage.
 // taskManager.save();
-
-
 
 });
 
