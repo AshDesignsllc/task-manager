@@ -1,8 +1,6 @@
 const taskManager = new TaskManager();
 //This should only be initialized once thus
 //why this is at the top and not connected to any other functions
-//taskManager.load();
-//taskManager.render(taskCards);
 //Answer to Step 8.8 to render and locally save Cards on page. When it is commented in, cards disappear.
 const taskCards = document.querySelector("#taskCards");
 const newTaskNameInput = document.querySelector("#newTaskNameInput");
@@ -13,6 +11,8 @@ const newStatusUpdate = document.querySelector("#statusUpdate");
 const dueDate = document.querySelector(".dueDate");
 // Fetch all the forms we want to apply custom Bootstrap validation styles to
 const forms = document.querySelectorAll(".needs-validation");
+const tasksListVariable = document.querySelector("#taskCards");
+const markAsDoneBtn = document.querySelector(".done-button");
 //create task manager first then use the addTask method once the user has added data
 // const _tasksManager = new TaskManager.addTask(tasks);
 //getElementsByClass returns a nodes list, you cannot access a single value of a node list,
@@ -59,8 +59,10 @@ Array.prototype.slice.call(forms).forEach(function (form) {
     false
   );
 });
-const tasksListVariable = document.querySelector("#taskCards");
-const markAsDoneBtn = document.querySelector(".done-button");
+
+taskManager.load();
+taskManager.render(taskCards);
+
 taskCards.addEventListener("click", (event) => {
   if (event.target.classList.contains("done-button")) {
     console.log('Mark as done button clicked');

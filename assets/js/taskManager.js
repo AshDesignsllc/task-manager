@@ -71,9 +71,9 @@ class TaskManager {
     } return foundTask;
   }   
   save() {
-    const tasksJson = JSON.stringify([this.tasks]);
+    const tasksJson = JSON.stringify(this.tasks);
 
-    localStorage.setItem("tasks",tasksJson);
+    localStorage.setItem("task",tasksJson);
     // let currentId = ("this.currentId")
     let currentId = this.currentId.toString();
     //Task 8-5
@@ -81,18 +81,20 @@ class TaskManager {
 }
 load() {
 
-if (localStorage.getItem("tasks")) {
+if (localStorage.getItem("task")) {
   //must be loaded as a string becase it was stringified while saving
-  const tasksJson = localStorage.getItem("tasks");
-  this.tasks =JSON.parse(tasksJson);
+  const tasksJson = localStorage.getItem("task");
+  if(tasksJson)this.tasks =JSON.parse(tasksJson);
   //5
 } 
   if (localStorage.getItem("currentId")) {
     const currentId = localStorage.getItem("currentId");
     //8.6
+    this.currentId = Number(currentId);
   }
-this.currentId = Number(currentId);
+
 }};
+
 
 //In the load method, check if any tasks are saved in localStorage with localStorage.getItem().
 // If any tasks are stored, get the JSON string of tasks stored in localStorage with localStorage.getItem(), making sure to pass the key we used to save the tasks, tasks. Store this string into a new variable, tasksJson.
