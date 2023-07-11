@@ -15,11 +15,13 @@ const createTaskHtml = (name, description, assign, taskType, dueDate, status, id
               
               </ul>
           <button class="done-button btn-outline-danger">MARK AS DONE</button>
+          <button class = "delete-button">Delete</button>
           </div>
       </div>
   </div>
   `;
   return html;
+  
 };
 class TaskManager {
   constructor(currentId = 0) {
@@ -69,7 +71,19 @@ class TaskManager {
       }
       
     } return foundTask;
-  }   
+  } 
+  
+  deleteTask (taskId) {
+    const newTasks = [];
+    for (let i = 0; i < this.tasks.length; i++) {
+      let task = this.tasks[i];
+      if (task.id !== taskId) {
+        newTasks.push(task);
+      }
+      
+    }
+  }
+  
   save() {
     const tasksJson = JSON.stringify(this.tasks);
 
@@ -92,6 +106,8 @@ if (localStorage.getItem("task")) {
     //8.6
     this.currentId = Number(currentId);
   }
+
+
 
 }};
 
