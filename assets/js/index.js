@@ -24,6 +24,7 @@ Array.prototype.slice.call(forms).forEach(function (form) {
     function (event) {
       // taskManager.getTaskById(1); TEST FOR ID LOOP
       event.preventDefault();
+      event.stopPropagation();
       if (form.checkValidity()) {
         // event.stopPropagation();
         console.log("Validated and called");
@@ -46,19 +47,16 @@ Array.prototype.slice.call(forms).forEach(function (form) {
         taskManager.render(taskCards);
         // taskManager.save();
         form.classList.add("was-validated");
-        console.log(taskManager.tasks);
         //Resetting the form on the line below
-        console.log(form.classList);
         form.classList.remove("was-validated");
-        console.log(form.classList);
+        
 
         form.reset();
         console.log("Form has been reset");
       } else {
-        event.stopPropagation();
+        form.classList.add('was-validated');
         console.log("Was not validated!");
       }
-      // form.classList.remove("was-validated");
     },
     false
   );
