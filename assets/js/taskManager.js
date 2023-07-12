@@ -1,5 +1,6 @@
 //Make sure to add data attribute to delete button the same way it was done on the 'mark as done' on line 5
 const createTaskHtml = (name, description, assign, taskType, dueDate, status, id) => {
+  console.log(id);
   const html = ` 
   <div class="col">
       <div class="card border-success mb-3 h-100" data-task= ${id}>
@@ -80,8 +81,8 @@ class TaskManager {
       if (task.id !== taskId) {
         newTasks.push(task);
       }
-      
     }
+    this.tasks = newTasks;
   }
   
   save() {
@@ -89,16 +90,16 @@ class TaskManager {
 
     localStorage.setItem("task",tasksJson);
     // let currentId = ("this.currentId")
-    let currentId = this.currentId.toString();
+    let currentId = String(this.currentId);
     //Task 8-5
-    localStorage.setItem("currentId",JSON.stringify(currentId));
+    localStorage.setItem("currentId", currentId);
 }
 load() {
 
 if (localStorage.getItem("task")) {
   //must be loaded as a string becase it was stringified while saving
   const tasksJson = localStorage.getItem("task");
-  if(tasksJson)this.tasks =JSON.parse(tasksJson);
+  this.tasks =JSON.parse(tasksJson);
   //5
 } 
   if (localStorage.getItem("currentId")) {

@@ -48,13 +48,17 @@ Array.prototype.slice.call(forms).forEach(function (form) {
         form.classList.add("was-validated");
         console.log(taskManager.tasks);
         //Resetting the form on the line below
+        console.log(form.classList);
+        form.classList.remove("was-validated");
+        console.log(form.classList);
+
         form.reset();
         console.log("Form has been reset");
       } else {
         event.stopPropagation();
         console.log("Was not validated!");
       }
-      form.classList.add("was-validated");
+      // form.classList.remove("was-validated");
     },
     false
   );
@@ -67,6 +71,7 @@ taskCards.addEventListener("click", (event) => {
   if (event.target.classList.contains("done-button")) {
     console.log('Mark as done button clicked');
     let parent = event.target.parentElement.parentElement;
+    console.log(parent);
     const taskId = Number(parent.dataset.task);
     console.log(taskId);
     let task = taskManager.getTaskById(taskId);
@@ -75,6 +80,15 @@ taskCards.addEventListener("click", (event) => {
     taskManager.render(taskCards);
     // taskManager.save();
     console.log(task);
+  } 
+  if (event.target.classList.contains("delete-button")) {
+    let parent = event.target.parentElement.parentElement;
+    console.log(parent);
+    const taskId = Number(parent.dataset.task);
+    taskManager.deleteTask(taskId);
+    console.log('it worked!');
+    taskManager.save();
+    taskManager.render(taskCards);
   }
 //In js/index.js, after both adding a new task and updating a task's status to done, call taskManager.save() to save the tasks to localSorage.
 // taskManager.save();
