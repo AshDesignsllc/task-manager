@@ -14,3 +14,11 @@ ul li {
   font-size: large;
   padding: 0 2rem;
 }
+
+.was-validated .form-control:valid {
+  background-image: none !important;
+}
+
+.form-select {
+  background-image: none !important;
+}
