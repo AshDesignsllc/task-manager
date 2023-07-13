@@ -112,6 +112,6 @@ if (localStorage.getItem("task")) {
 
 }};
 
-
+module.exports=TaskManager;
 //In the load method, check if any tasks are saved in localStorage with localStorage.getItem().
 // If any tasks are stored, get the JSON string of tasks stored in localStorage with localStorage.getItem(), making sure to pass the key we used to save the tasks, tasks. Store this string into a new variable, tasksJson.
