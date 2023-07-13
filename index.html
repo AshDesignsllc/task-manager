@@ -28,8 +28,8 @@
                     <div class="container mx-auto">
                         <h1 class="text-center mt-5">Task List</h1>
                         <div class="input-group mb-3 mt-5">
-                            <span class="input-group-text">Add New Task</span>
-                            <input type="text" class="form-control" aria-label="Username" id="newTaskNameInput"
+                            <span class="input-group-text shadow-sm">Add New Task</span>
+                            <input type="text" class="form-control shadow-sm" aria-label="Username" id="newTaskNameInput"
                                 required>
                             <!-- WE NEED TO ADD THIS TO EVERY INPUT-->
                             <div class="invalid-feedback">
@@ -37,8 +37,8 @@
                             </div>
                         </div>
                         <div class="input-group mt-5">
-                            <span class="input-group-text">Task Description</span>
-                            <textarea class="form-control newDescriptionInput" id="formcontroltextarea"
+                            <span class="input-group-text shadow-sm">Task Description</span>
+                            <textarea class="form-control newDescriptionInput shadow-sm" id="formcontroltextarea"
                                 aria-label="Task Description" required></textarea>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                     <!-- Remove names from the dropdown menu so that we can personalize it later. Save for after step 10 -->
                     <div class="row mt-5 justify-content-center">
                         <div class="col-auto">
-                            <select class="form-select form-select-lg my-3" id="assignedTo"
+                            <select class="form-select form-select-lg my-3 shadow-sm" id="assignedTo"
                                 aria-label="Default select example" required>
                                 <option value="">Assigned To:</option>
                                 <option value="Jordan">Jordan</option>
@@ -57,7 +57,7 @@
                             </select>
                         </div>
                         <div class="col-auto">
-                            <select class="form-select form-select-lg my-3" id="taskType"
+                            <select class="form-select form-select-lg my-3 shadow-sm" id="taskType"
                                 aria-label="Default select example" required>
                                 <option value="">Task Type</option>
                                 <option value="Design user interfaces & nav menus">Design user interfaces & nav menus
@@ -74,7 +74,7 @@
                         In order to get the value of the option you need to have the values be the same as the html txt-->
 
                         <div class="col-auto">
-                            <select class="form-select form-select-lg my-3" id="statusUpdate"
+                            <select class="form-select form-select-lg my-3 shadow-sm" id="statusUpdate"
                                 aria-label="Default select example" required>
                                 <option value="">Status</option>
                                 <option value="Not started">Not started</option>
@@ -85,22 +85,23 @@
                         <div class="col-auto">
                             <div class="row text-center my-3">
                                 <div class="input-group">
-                                    <div class="input-group-text">Due Date</div>
-                                    <input type="date" class="dueDate form-control" id="autoSizingInputGroup"
+                                    <div class="input-group-text shadow-sm">Due Date</div>
+                                    <input type="date" class="dueDate form-control shadow-sm" id="autoSizingInputGroup"
                                         style="width: 150px; height: 50px;" id="start" name="trip-start"
-                                        value="2023-07-21" min="2023-05-09" max="2023-12-31" required>
+                                        value="yyyy-mm-dd" min="2023-05-09" max="2028-12-31" required>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row d-grid gap-2 col-6 mx-auto mt-5">
                         <button type="submit" id="addTaskBtn"
-                            class="submitBtn btn-primary btn-lg shadow-lg p-3 mb-5">Add Task</button>
+                            class="submitBtn btn-primary btn-lg shadow-lg p-3 mb-5">ADD TASK</button>
                     </div>
 
                 </form>
                 <!-- Task Card -->
                 <div class="container-fluid">
+                    <h2 class="text-center mt-4 pb-5">Assigned Tasks</h2>
                     <div id="taskCards" class="row row-cols-1 row-cols-md-3 g-4">
 
                         <!-- <div class="col">

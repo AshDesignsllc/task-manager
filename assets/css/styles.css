@@ -1,3 +1,5 @@
+/* GLOBAL STYLES */
+
 * {
   background-color: rgb(228, 231, 231);
 }
@@ -6,14 +8,16 @@ h1 {
   color: rgb(47, 32, 32);
   text-shadow: 10px;
   font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: larger;
+  font-size: 50px !important;
 }
 
 ul li {
   list-style: none;
   font-size: large;
-  padding: 0 2rem;
+  padding: 0;
 }
+
+/* FORM STYLES */
 
 .was-validated .form-control:valid {
   background-image: none !important;
@@ -21,4 +25,21 @@ ul li {
 
 .form-select {
   background-image: none !important;
+}
+
+.input-group-text {
+  font-size: 1.25rem !important;
+}
+
+/* TASK CARD STYLES */
+
+.card-header:first-child {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.1rem;
+}
+
+.card-title {
+  font-weight: 700;
 }

@@ -3,9 +3,9 @@ const createTaskHtml = (name, description, assign, taskType, dueDate, status, id
   console.log(id);
   const html = ` 
   <div class="col">
-      <div class="card border-success mb-3 h-100" data-task= ${id}>
-          <div class="card-header">Task created successfully</div>
-          <div class="card-body text-success">
+      <div class="card border-dark border-1 mb-3 h-100 shadow" data-task= ${id}>
+          <div class="card-header text-success">Task created successfully</div>
+          <div class="card-body">
           <ul>
               <li class="card-title">${name}</li>
               <li class="card-text">${description}</li>
@@ -15,8 +15,8 @@ const createTaskHtml = (name, description, assign, taskType, dueDate, status, id
               <li class="card-text">${status}</li>
               
               </ul>
-          <button class="done-button btn-outline-danger">MARK AS DONE</button>
-          <button class = "delete-button">Delete</button>
+          <button class="done-button btn btn-danger shadow-lg type="">MARK AS DONE</button>
+          <button class="float-end delete-button btn btn-dark shadow-lg">DELETE</button>
           </div>
       </div>
   </div>
